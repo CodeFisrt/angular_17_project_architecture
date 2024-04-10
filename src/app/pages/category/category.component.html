@@ -1,1 +1,78 @@
-<p>category works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card col-8 float-start mr-2">
+        <div class="card-header bg-primary">Category List</div>
+        <div class="card-body">
+          <div class="spinner-border" role="status" *ngIf="isLoaderPresent">
+            <!-- <span class="sr-only">Loading...</span> -->
+          </div>
+          <table class="table table-responsive">
+            <thead>
+              <tr class="table-primary">
+                <th>categoryId</th>
+                <th>categoryName</th>
+                <th>parentCategoryId</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of categoryList">
+                <td>{{ category.categoryId }}</td>
+                <td>{{ category.categoryName }}</td>
+                <td>{{ category.parentCategoryId }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card col-4 float-end">
+        <div class="card-header bg-success">Add Category</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <label for="name">CategoryId</label>
+              <input
+                type="text"
+                name="CategoryId"
+                id="CategoryId"
+                [(ngModel)]="catObj.CategoryId"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="CategoryName">CategoryName</label>
+              <input
+                type="text"
+                name="CategoryName"
+                id="CategoryName"
+                [(ngModel)]="catObj.CategoryName"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="ParentCategoryId">ParentCategoryId</label>
+              <input
+                type="text"
+                name="ParentCategoryId"
+                id="ParentCategoryId"
+                [(ngModel)]="catObj.ParentCategoryId"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-primary" (click)="onSaveCategory()">
+                <span
+                  *ngIf="isLoaderPresent"
+                  class="spinner-border spinner-border-sm"
+                ></span>
+                Save Category
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
