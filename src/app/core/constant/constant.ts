@@ -10,6 +10,10 @@ export const APIConstant = {
     employee: {
         GET_ALL_EMPLOYEE: 'getallemployee',
         ADD_NEW_EMPLOYEE: 'createemployee'
+    },
+    customer: {
+        GET_ALL_CUSTOMER: 'https://freeapi.gerasim.in/api/BigBasket/GetAllCustomer',
+        UPDATE_CUSTOMER: 'https://freeapi.gerasim.in/api/BigBasket/UpdateProfile'
     }
    
 }

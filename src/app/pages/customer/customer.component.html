@@ -1,1 +1,63 @@
 <p>customer works!</p>
+<!-- <pre>{{customerList | json}}</pre> -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          Customer Details
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Cust ID</th>
+                  <th>Name</th>
+                  <th>Mobile No</th>
+                  <th>Password</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let customer of customerList; let i=index">
+                  <td>{{ customer.custId }}</td>
+                  <td>{{ customer.name }}</td>
+                  <td>{{ customer.mobileNo }}</td>
+                  <td>{{ customer.password }}</td>
+                  <td>
+                    <button class="btn btn-primary" (click)="onEdit(customer.custId)">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="selectedCustomer">
+      <div class="card">
+        <div class="card-header bg-warning">
+          Edit Customer
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="editName">Name:</label>
+            <input type="text" class="form-control" id="editName" [(ngModel)]="selectedCustomer.name">
+          </div>
+          <div class="form-group">
+            <label for="MobileNo">Mobile No:</label>
+            <input type="text" class="form-control" id="MobileNo" [(ngModel)]="selectedCustomer.mobileNo">
+          </div>
+          <div class="form-group">
+            <label for="editPassword">Password:</label>
+            <input type="password" class="form-control" id="editPassword" [(ngModel)]="selectedCustomer.password">
+          </div>
+          <button class="btn btn-primary" (click)="updateChanges()">Update</button>
+          <button class="btn btn-primary" (click)="saveChanges()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
