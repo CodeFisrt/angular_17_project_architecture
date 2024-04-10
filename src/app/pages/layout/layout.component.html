@@ -5,20 +5,28 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item" style="margin-top:-12px;">
-            <a class="nav-link active" href="javascript:void(0)">Link</a>
+        <ul class="navbar-nav w-100">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
           </li>
-          <li class="nav-item" style="margin-top:-12px;">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/productList">Product List</a>
           </li>
-          <li class="nav-item" style="margin-top:-12px;">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/category">category List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/customer">customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="orderList">Order List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="cart">Cart</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Search">
-          <button class="btn btn-primary" type="button">Search</button>
+        <form class="d-flex text-align-right">
+          <button class="btn btn-primary " type="button">Search</button>
         </form>
       </div>
     </div>
