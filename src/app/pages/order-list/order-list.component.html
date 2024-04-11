@@ -1,1 +1,44 @@
-<p>order-list works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Order List</h1>
+                <table class="table table-bordered w-100">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Product Name</th> 
+                            <th>Category Name</th>
+                            <th>Product Description</th>
+                            <th>Product Image </th>
+                            <th>Product Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngIf="isLoader == true">
+                            <tr>
+                                <td colspan="7">
+                                    <div class="d-block m-auto spinner-border text-center text-warning"></div>
+                                </td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="isLoader == false">
+                            <tr *ngFor="let order of OrderList;let sr = index">
+                                <td> {{sr+1}}</td>
+                                <td> {{order.CustId}}</td> 
+                                <td> {{order.PaymentNaration}}</td> 
+                                <td> {{order.DeliveryAddress1}}</td> 
+                                <td> {{order.IsCanceled}}</td>
+                                <td> {{order.TotalInvoiceAmount}}</td> 
+                                <td>
+                                    <button class="btn btn-danger" (click)="onDelete(product.productId)">Delete</button>
+                                </td>
+                            </tr>
+                        </ng-container>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
