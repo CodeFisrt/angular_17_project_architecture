@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
     isSaveApiCallInProgress: boolean = false;
   
     constructor(private http: HttpClient) {
-  
+      
     }
   
     ngOnInit(): void {
