@@ -23,8 +23,8 @@
                 <tr *ngFor="let customer of customerList; let i=index">
                   <td>{{ customer.custId }}</td>
                   <td>{{ customer.name }}</td>
-                  <td>{{ customer.mobileNo }}</td>
-                  <td>{{ customer.password }}</td>
+                  <td>{{ customer.mobileNo | na:'Not Available' }}</td>
+                  <td>{{ customer.password  | na:'N/A'}}</td>
                   <td>
                     <button class="btn btn-primary" (click)="onEdit(customer.custId)">Edit</button>
                     <button class="btn btn-danger">Delete</button>
