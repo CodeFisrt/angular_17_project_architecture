@@ -1,32 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="card col-8 float-start mr-2">
-        <div class="card-header bg-primary">Product List</div>
-        <div class="card-body">
-          <table class="table table-responsive">
-            <thead>
-              <tr class="table-primary">
-                <th>ProductId</th>
-                <th>ProductSku</th>
-                <th>ProductName</th>
-                <th>ProductPrice</th>
-                <th>ProductDescription</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let product of productList">
-                <td>{{ product.ProductId }}</td>
-                <td>{{ product.ProductSku }}</td>
-                <td>{{ product.ProductName }}</td>
-                <td>{{ product.ProductPrice }}</td>
-                <td>{{ product.ProductDescription }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="card col-4 float-end">
+      <div class="card col-12 float-start">
         <div class="card-header bg-success">Add Procduct</div>
         <div class="card-body">
           <div class="row">
