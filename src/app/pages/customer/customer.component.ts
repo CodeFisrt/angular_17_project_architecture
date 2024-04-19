@@ -11,6 +11,7 @@ import { CustomerService } from '../../core/services/customer/customer.service';
 export class CustomerComponent implements OnInit {
   customerList: ICustomer[] = [];
   selectedCustomer: ICustomer | null = null;
+  headerList: string[]= ['name','mobileNo','password'];
 
   constructor(private customerService: CustomerService, private http: HttpClient) {}
 

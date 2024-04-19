@@ -16,6 +16,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NaPipe } from './shared/pipes/na.pipe';
+import { ProductCardComponent } from './shared/reusabelComponent/product-card/product-card.component';
+import { IsEditDirective } from './shared/directives/is-edit.directive';
+import { MyTableComponent } from './shared/reusabelComponent/my-table/my-table.component';
+import { NumbersOnlyDirective } from './shared/directives/numbers-only.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { NaPipe } from './shared/pipes/na.pipe';
     LoginComponent,
     LayoutComponent,
     DashboardComponent,
-    NaPipe
+    NaPipe,
+    ProductCardComponent,
+    IsEditDirective,
+    MyTableComponent,
+    NumbersOnlyDirective
   ],
   imports: [
     BrowserModule,

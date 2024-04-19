@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../core/model/class/User';
+import { UserService } from '../../core/services/user/user.service';
 
 
 @Component({
@@ -16,10 +17,17 @@ export class ProductListComponent implements OnInit {
 
   isLoader: boolean = true;
   isSaveApiCallInProgress: boolean = false;
+  mode: string = '';
 
-  constructor(private http: HttpClient) {
-
+  constructor(private http: HttpClient,private userService: UserService) {
+    this.userService.modeChange$?.subscribe(res=>{
+      debugger;
+      this.mode =  res;
+    })
   }
+  identify(index:number, item:Product){
+    return item.productId; 
+ }
 
   ngOnInit(): void {
     this.GetAllProduct();

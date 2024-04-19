@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>product list</h1>
+                <h1>product list - {{mode}}</h1>
                 <table class="table table-bordered w-100">
                     <thead>
                         <tr>
                             <th>Sr No</th>
-                            <th>Product Name</th> 
+                            <th>Product Name</th>
                             <th>Category Name</th>
                             <th>Product Description</th>
                             <th>Product Image </th>
@@ -23,14 +23,16 @@
                             </tr>
                         </ng-container>
                         <ng-container *ngIf="isLoader == false">
-                            <tr *ngFor="let product of ProductList;let sr = index">
+                            <tr *ngFor="let product of ProductList;let sr= index">
                                 <td> {{sr+1}}</td>
-                                <td> {{product.productName}}</td> 
-                                <td> {{product.categoryName}}</td> 
-                                <td> {{product.productDescription | na}}</td> 
+                                <td> {{product.productName}}</td>
+                                <td>
+                                    {{product.categoryName}}
+                                </td>
+                                <td> {{product.productDescription | na}}</td>
                                 <td> <img src="{{product.productImageUrl}}" class="w-100" /></td>
                                 <td> {{product.productPrice}}</td>
-                                <td>
+                                <td appIsEdit>
                                     <button class="btn btn-danger" (click)="onDelete(product.productId)">Delete</button>
                                 </td>
                             </tr>

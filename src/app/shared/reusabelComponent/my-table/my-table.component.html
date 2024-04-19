@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th *ngFor="let header of headerColList">{{header}}</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of gridData;let sr= index">
+        <td>{{sr+1}}</td>
+        <td *ngFor="let header of headerColList">
+         {{item[header]}}
+        </td>
+       </tr>
+    </tbody>
+  </table>

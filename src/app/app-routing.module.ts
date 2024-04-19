@@ -9,6 +9,7 @@ import { CustomerComponent } from './pages/customer/customer.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderListComponent } from './pages/order-list/order-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,10 +24,16 @@ const routes: Routes = [
   {
     path:'',
     component:LayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'productList',
-        component: ProductListComponent
+        component: ProductListComponent,
+      
+      },
+      {
+        path: 'createProduct',
+        component: CreateNewProductComponent
       },
       {
         path: 'createProduct/:id',

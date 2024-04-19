@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../core/services/user/user.service';
 
 @Component({
   selector: 'app-order-list',
@@ -28,9 +29,12 @@ export class OrderListComponent implements OnInit {
   
     isLoader: boolean = true;
     isSaveApiCallInProgress: boolean = false;
-  
-    constructor(private http: HttpClient) {
-  
+    mode: string = '';
+    constructor(private http: HttpClient,private userService: UserService) {
+      this.userService.modeChange$?.subscribe(res=>{
+        debugger;
+        this.mode =  res;
+      })
     }
   
     ngOnInit(): void {

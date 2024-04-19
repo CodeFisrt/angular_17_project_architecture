@@ -9,29 +9,7 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Cust ID</th>
-                  <th>Name</th>
-                  <th>Mobile No</th>
-                  <th>Password</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let customer of customerList; let i=index">
-                  <td>{{ customer.custId }}</td>
-                  <td>{{ customer.name }}</td>
-                  <td>{{ customer.mobileNo | na:'Not Available' }}</td>
-                  <td>{{ customer.password  | na:'N/A'}}</td>
-                  <td>
-                    <button class="btn btn-primary" (click)="onEdit(customer.custId)">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <app-my-table [headerColList]="headerList" [gridData]="customerList">  </app-my-table> 
           </div>
         </div>
       </div>

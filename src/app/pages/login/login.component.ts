@@ -17,6 +17,7 @@ export class LoginComponent {
 
   onLogin() {
     if(this.login.username =='admin' && this.login.password == '112233') {
+      localStorage.setItem('EcomUser',this.login.username);
       this.router.navigateByUrl('dashboard')
     } else {
       alert('wrong credentials')
